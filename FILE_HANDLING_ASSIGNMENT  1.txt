@@ -1,0 +1,76 @@
+1)find no of spaces in a file
+================================================
+path= r'C:\Users\Lenovo\file_handling\file22.txt'
+
+count=0
+with open(path) as f1:
+    li=list(f1)
+    for words in li:
+        list1=words.split()
+    for spaces in range(0, len(list1)):
+        if list1[spaces]==' ':
+            count+=1
+print('no of spaces in file======',count)
+
+
+2)create dictionary with word and count pair
+================================================
+
+path= r'C:\Users\Lenovo\file_handling\file22.txt'
+
+d={}
+with open(path) as f1:
+    for lines in f1:
+        li=lines.split()
+        for index, word in enumerate(li):
+            d[word]=index
+print(d)        
+
+
+5)Based on the user input print that perticular line
+example if user input 3 then you need to print 3rd line
+===========================================================
+path= r'C:\Users\Lenovo\file_handling\file22.txt'
+line_no=int(input('enter line no :'))
+count=0
+with open(path) as f1:
+    for index,lines in enumerate(f1):
+        count+=1
+        if line_no==index:
+            print(lines, line_no)        
+
+
+
+3)create a dictionary if word starting with vowel
+=====================================================
+
+path= r'C:\Users\Lenovo\file_handling\file22.txt'
+
+d={}
+vowels=['a','e','i','o','u']
+with open(path) as f1:
+        li=list(f1)
+        for words in li:
+            list1=words.split()
+            for word in list1:   
+                if d[word][1]==vowels:
+                    print(d)  
+
+
+4)create a dictionary first letter with that word
+ex = {'h':['hello''hai'],'w':['world','world'].....}
+=========================================================
+path= r'C:\Users\Lenovo\file_handling\file22.txt'
+word_dic={}
+with open(path) as f1:
+    li=list(f1)
+    for words in li:
+        list1=words.split()
+        for word in list1:
+            first_letter=word[0]
+            if first_letter not in word_dic:
+                word_dic[first_letter]=[word]
+            else:
+                word_dic[first_letter].append(word)
+print(word_dic)
+        
